@@ -12,5 +12,5 @@ public class Ingrediens
 
     public int Calories { get; set; }
 
-    public int barcodeId { get; set; }
+    public int BarcodeId { get; set; }
 }

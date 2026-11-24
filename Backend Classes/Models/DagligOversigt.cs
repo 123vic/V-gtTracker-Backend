@@ -10,4 +10,6 @@ public class DagligOversigt : IHarId
     public int Id { get; set; }
 
     public DateTime Dato { get; set; }
+
+   List<Måltid> Måltider { get; set; }
 }
