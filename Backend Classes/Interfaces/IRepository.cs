@@ -6,4 +6,10 @@ namespace Backend_Classes.Interfaces;
 
 public interface IRepository<T> where T : class, IHarId
 {
+    Dictionary<int, T> Data { get; }
+
+    T? GetItem(int id);
+    void Create(T t);
+    bool Delete(int id);
+    void Update(T t);
 }
