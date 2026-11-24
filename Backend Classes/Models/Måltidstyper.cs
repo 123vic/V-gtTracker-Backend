@@ -6,4 +6,7 @@ namespace Backend_Classes.Models;
 
 public enum Måltidstyper
 {
+    Morgenmad,
+    Frokost,
+    Aftensmad
 }
