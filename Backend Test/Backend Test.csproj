@@ -16,6 +16,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Backend Classes\Backend Classes.csproj" />
+    <ProjectReference Include="..\VægtTracker - Backend\VægtTracker - Backend.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Using Include="Xunit" />
   </ItemGroup>
 

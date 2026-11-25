@@ -11,4 +11,8 @@ public class SimpelIngrediens : IHarId
     public string Navn { get; set; }
     public int BarcodeId { get; set; }
 
+
+    public SimpelIngrediens() { 
+    }
+
 }
