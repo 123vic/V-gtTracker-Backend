@@ -19,4 +19,9 @@ public class SimpelIngrediensRepository : RepositoryBase<SimpelIngrediens>, ISim
     }
 
 
+    public IEnumerable<SimpelIngrediens> GetAll()
+    {
+        return Data.Select(x => x.Value);   
+    }
+
 }

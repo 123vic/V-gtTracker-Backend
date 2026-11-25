@@ -5,7 +5,7 @@ using Backend_Classes.Repositories;
 
 namespace Backend_Test;
 
-public class GetFoodItemByFullName
+public class SimpleRepository_Test
 {
     [Fact]
     public void GetFoodItemByFullName_Succes()
@@ -29,7 +29,7 @@ public class GetFoodItemByFullName
 
 
         //Act
-        IEnumerable<Ingrediens> ingrediens = repo.GetAll();
+        IEnumerable<SimpelIngrediens> ingrediens = repo.GetAll();
 
         //Assert
         Assert.NotEmpty(ingrediens);
