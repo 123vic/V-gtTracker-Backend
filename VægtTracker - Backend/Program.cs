@@ -17,6 +17,11 @@ builder.Services.AddHttpClient<IOpenFoodFactsService, OpenFoodFactsService>(c =>
 });
 
 var app = builder.Build();
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("Frontend", policy =>
+        policy.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
+});
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
