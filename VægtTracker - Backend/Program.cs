@@ -11,7 +11,7 @@ builder.Services.AddControllers();
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
 
-builder.Services.AddSingleton<ISimpelIngrediensRepository, SimpelIngrediensRepository>();
+builder.Services.AddSingleton<ISimpelIngrediensRepository, SimpelIngredientRepository>();
 
 var app = builder.Build();
 

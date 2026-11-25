@@ -4,6 +4,6 @@ namespace Backend_Classes.Interfaces
 {
     public interface ISimpelIngrediensRepository
     {
-        SimpelIngrediens? GetItemByName(string name);
+        SimpelIngredient? GetItemByName(string name);
     }
 }
