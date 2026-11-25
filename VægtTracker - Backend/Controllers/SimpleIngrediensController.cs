@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Backend_Classes.Interfaces;
+using Backend_Classes.Models;
+using Microsoft.AspNetCore.Mvc;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -8,11 +10,18 @@ namespace VægtTracker___Backend.Controllers
     [ApiController]
     public class SimpleIngrediensController : ControllerBase
     {
+        ISimpelIngrediensRepository _repository;
+
+        public SimpleIngrediensController(ISimpelIngrediensRepository repository)
+        {
+            _repository = repository;
+        }
+        
         // GET: api/<SimpleIngrediensController>
         [HttpGet]
-        public IEnumerable<string> Get()
+        public IEnumerable<SimpelIngredient> Get()
         {
-            return new string[] { "value1", "value2" };
+            
         }
 
         // GET api/<SimpleIngrediensController>/5
