@@ -18,5 +18,18 @@ namespace Backend_Test
             Assert.NotNull(result);
             Assert.Equal("Havregryn", result.Name);
         }
+
+        [Fact]
+        public void GetByBarcode_FindesIkke_ReturnererNull()
+        {
+            //Arrange
+            var repo = new IngrediensRepository();
+
+            //Act
+            var resultat = repo.GetByBarcode("0000000000000");
+
+            //Assert
+            Assert.NotNull(resultat);
+        }
     }
 }
