@@ -8,42 +8,42 @@ namespace VægtTracker___Backend.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class SimpleIngrediensController : ControllerBase
+    public class SimpleIngredientController : ControllerBase
     {
         ISimpelIngredientRepository _repository;
 
-        public SimpleIngrediensController(ISimpelIngredientRepository repository)
+        public SimpleIngredientController(ISimpelIngredientRepository repository)
         {
             _repository = repository;
         }
         
-        // GET: api/<SimpleIngrediensController>
+        // GET: api/<SimpleIngredientController>
         [HttpGet]
         public IEnumerable<SimpelIngredient> Get()
         {
-            return _repository.
+            return _repository.GetAll();
         }
 
-        // GET api/<SimpleIngrediensController>/5
+        // GET api/<SimpleIngredientController>/5
         [HttpGet("{id}")]
         public string Get(int id)
         {
             return "value";
         }
 
-        // POST api/<SimpleIngrediensController>
+        // POST api/<SimpleIngredientController>
         [HttpPost]
         public void Post([FromBody] string value)
         {
         }
 
-        // PUT api/<SimpleIngrediensController>/5
+        // PUT api/<SimpleIngredientController>/5
         [HttpPut("{id}")]
         public void Put(int id, [FromBody] string value)
         {
         }
 
-        // DELETE api/<SimpleIngrediensController>/5
+        // DELETE api/<SimpleIngredientController>/5
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
