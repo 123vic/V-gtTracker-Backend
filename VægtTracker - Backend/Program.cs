@@ -10,6 +10,13 @@ builder.Services.AddControllers();
 builder.Services.AddSingleton<IngrediensRepository>();
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAll", policy =>
+        policy.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
+});
+
 builder.Services.AddHttpClient<IOpenFoodFactsService, OpenFoodFactsService>(c =>
 {
     c.BaseAddress = new Uri("https://dk.openfoodfacts.org/");
@@ -17,11 +24,7 @@ builder.Services.AddHttpClient<IOpenFoodFactsService, OpenFoodFactsService>(c =>
 });
 
 var app = builder.Build();
-builder.Services.AddCors(options =>
-{
-    options.AddPolicy("Frontend", policy =>
-        policy.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
-});
+
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
