@@ -21,7 +21,7 @@ namespace VægtTracker___Backend.Controllers
         [HttpGet]
         public IEnumerable<SimpelIngredient> Get()
         {
-            
+            return _repository.
         }
 
         // GET api/<SimpleIngrediensController>/5
