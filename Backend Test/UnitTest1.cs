@@ -29,7 +29,7 @@ namespace Backend_Test
             var resultat = repo.GetByBarcode("0000000000000");
 
             //Assert
-            Assert.NotNull(resultat);
+            Assert.Null(resultat);
         }
     }
 }
