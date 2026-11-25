@@ -19,4 +19,19 @@ public class GetFoodItemByFullName
         //Assert
         Assert.Equal("Ris",ingrediens.Navn);
     }
+
+
+    [Fact]
+    public void GetAllFoodItems_Succes()
+    {
+        //Arrange 
+        SimpelIngrediensRepository repo = new SimpelIngrediensRepository();
+
+
+        //Act
+        IEnumerable<Ingrediens> ingrediens = repo.GetAll();
+
+        //Assert
+        Assert.NotEmpty(ingrediens);
+    }
 }
