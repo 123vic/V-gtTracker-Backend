@@ -8,5 +8,9 @@ namespace Backend_Classes.Repositories;
 
 public class IngrediensRepository : RepositoryBase<Ingrediens>
 {
+    public Ingrediens? GetByBarcode(string barcodeId)
+    {
+        return Data.Values.FirstOrDefault(i => i.BarcodeId == barcodeId);
+    }
 
 }
