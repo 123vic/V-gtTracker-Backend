@@ -1,15 +1,16 @@
-﻿using Backend_Classes.Models;
+﻿using Backend_Classes.Interfaces;
+using Backend_Classes.Models;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace Backend_Classes.Repositories;
 
-public class SimpelIngrediensRepository : RepositoryBase<SimpelIngrediens>
+public class SimpelIngrediensRepository : RepositoryBase<SimpelIngrediens>, ISimpelIngrediensRepository
 {
     public SimpelIngrediensRepository()
     {
-        Create(new SimpelIngrediens("Ris",1000));
+        Create(new SimpelIngrediens("Ris", 1000));
     }
 
     public SimpelIngrediens? GetItemByName(string name)

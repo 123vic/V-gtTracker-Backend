@@ -14,9 +14,9 @@ public class GetFoodItemByFullName
         SimpelIngrediensRepository repo = new SimpelIngrediensRepository();
 
         //Act
-        //SimpelIngrediens ingrediens = repo.GetItemByName("Ris");
+        SimpelIngrediens ingrediens = repo.GetItemByName("Ris");
 
         //Assert
-        //Assert.Equal("Ris",ingrediens);
+        Assert.Equal("Ris",ingrediens.Navn);
     }
 }
