@@ -31,5 +31,23 @@ namespace Backend_Test
             //Assert
             Assert.Null(resultat);
         }
+
+        [Fact]
+        public async Task KanHenteProduktFraOpenFoodFacts()
+        {
+            var http = new HttpClient
+            {
+                BaseAddress = new Uri("https://dk.openfoodfacts.org/")
+            };
+            http.DefaultRequestHeaders.UserAgent.ParseAdd("VaegtTracker/1.0 (Lucas4e12345@gmail.com)");
+
+             var response = await http.GetAsync("api/v2/product/3017620422003.json");
+             var json = await response.Content.ReadAsStringAsync();
+
+             Console.WriteLine(json);
+
+             Assert.True(response.IsSuccessStatusCode);
+             Assert.True(json.Contains("\"status\":1"));
+        }
     }
 }
