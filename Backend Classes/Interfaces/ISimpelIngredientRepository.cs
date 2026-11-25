@@ -2,7 +2,7 @@
 
 namespace Backend_Classes.Interfaces
 {
-    public interface ISimpelIngrediensRepository
+    public interface ISimpelIngredientRepository
     {
         SimpelIngredient? GetItemByName(string name);
     }

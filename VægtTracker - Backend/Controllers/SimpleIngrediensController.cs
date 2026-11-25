@@ -10,9 +10,9 @@ namespace VægtTracker___Backend.Controllers
     [ApiController]
     public class SimpleIngrediensController : ControllerBase
     {
-        ISimpelIngrediensRepository _repository;
+        ISimpelIngredientRepository _repository;
 
-        public SimpleIngrediensController(ISimpelIngrediensRepository repository)
+        public SimpleIngrediensController(ISimpelIngredientRepository repository)
         {
             _repository = repository;
         }

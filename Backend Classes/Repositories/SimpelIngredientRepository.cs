@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Backend_Classes.Repositories;
 
-public class SimpelIngredientRepository : RepositoryBase<SimpelIngredient>, ISimpelIngrediensRepository
+public class SimpelIngredientRepository : RepositoryBase<SimpelIngredient>, ISimpelIngredientRepository
 {
     public SimpelIngredientRepository()
     {
