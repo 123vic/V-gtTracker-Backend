@@ -11,7 +11,7 @@ public class GetFoodItemByFullName
     public void GetFoodItemByFullName_Succes()
     {
         //Arrange 
-        SimpelIngrediensRepository<SimpelIngrediens> repo = new SimpelIngrediensRepository<SimpelIngrediens>();
+        SimpelIngrediensRepository repo = new SimpelIngrediensRepository();
 
         //Act
         //SimpelIngrediens ingrediens = repo.GetItemByName("Ris");

@@ -12,7 +12,9 @@ public class SimpelIngrediens : IHarId
     public int BarcodeId { get; set; }
 
 
-    public SimpelIngrediens() { 
+    public SimpelIngrediens(string navn, int barcodeId) {
+        Navn = navn;
+        BarcodeId = barcodeId;
     }
 
 }
