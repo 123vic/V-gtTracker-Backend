@@ -1,5 +1,6 @@
 ﻿using Backend_Classes.Models;
 using Backend_Classes.Repositories;
+using Microsoft.AspNetCore.Mvc;
 using VægtTracker___Backend.Controllers;
 
 namespace Backend_Test
@@ -12,9 +13,9 @@ namespace Backend_Test
         {
             var controller = new SimpleIngredientController(new SimpelIngredientRepository());
 
-            IEnumerable<SimpelIngredient> simpelIngredients = controller.Get();
+            ActionResult<IEnumerable<SimpelIngredient>> simpelIngredients = controller.Get();
 
-            Assert.NotEmpty(simpelIngredients);
+            Assert.NotEmpty(simpelIngredients.Value);
         }
     }
 }

@@ -16,12 +16,21 @@ namespace VægtTracker___Backend.Controllers
         {
             _repository = repository;
         }
-        
+
         // GET: api/<SimpleIngredientController>
+        [ProducesResponseType(StatusCodes.Status200OK)]
         [HttpGet]
-        public IEnumerable<SimpelIngredient> Get()
-        {
-            return _repository.GetAll();
+        public ActionResult<IEnumerable<SimpelIngredient>> Get()
+        { 
+            return Ok(_repository.GetAll());
+        }
+
+        //GET 
+
+        [HttpGet("/getfood/{searchterm}")]
+        public SimpelIngredient Get(string searchterm) 
+        { 
+            return _repository.GetItemByName(searchterm);
         }
 
         // GET api/<SimpleIngredientController>/5
