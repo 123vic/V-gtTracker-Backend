@@ -1,5 +1,6 @@
 <Solution>
   <Project Path="Backend Classes/Backend Classes.csproj" />
   <Project Path="Backend Test/Backend Test.csproj" />
+  <Project Path="MsTests/MsTests.csproj" Id="afbd717d-25ae-4dbc-a23b-465214b4e834" />
   <Project Path="VægtTracker - Backend/VægtTracker - Backend.csproj" />
 </Solution>
