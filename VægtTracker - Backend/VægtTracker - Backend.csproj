@@ -16,4 +16,8 @@
     <ProjectReference Include="..\Backend Classes\Backend Classes.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Backend Classes\Backend Classes.csproj" />
+  </ItemGroup>
+
 </Project>
