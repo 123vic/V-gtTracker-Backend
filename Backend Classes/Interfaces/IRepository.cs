@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Backend_Classes.Interfaces;
 
-public interface IRepository<T> where T : class, IHarId
+public interface IRepository<T> where T : class, IHasId
 {
     Dictionary<int, T> Data { get; }
 

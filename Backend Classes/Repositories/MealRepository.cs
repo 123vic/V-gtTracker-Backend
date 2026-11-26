@@ -4,6 +4,6 @@ using System.Text;
 
 namespace Backend_Classes.Repositories;
 
-public class BrugerRepository<Bruger>
+public class MealRepository<Meal>
 {
 }

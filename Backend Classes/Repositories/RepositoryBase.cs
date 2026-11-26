@@ -1,11 +1,12 @@
 ﻿using Backend_Classes.Interfaces;
+using Backend_Classes.Models;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace Backend_Classes.Repositories;
 
-public abstract class RepositoryBase<T> : IRepository<T> where T : class, IHarId
+public abstract class RepositoryBase<T> : IRepository<T> where T : class, IHasId
 {
     public Dictionary<int, T> Data { get; }
     private static int newId;
@@ -38,6 +39,8 @@ public abstract class RepositoryBase<T> : IRepository<T> where T : class, IHarId
             Data[t.Id] = t;
         }
     }
+
+
 
     private int GenerateId()
     {

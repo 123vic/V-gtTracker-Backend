@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Backend_Classes.Models;
 
-public enum Måltidstyper
+public enum MealTypes
 {
     Morgenmad,
     Frokost,
