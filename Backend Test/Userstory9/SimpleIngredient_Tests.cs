@@ -11,10 +11,10 @@ public class SimpleRepository_Test
     public void GetFoodItemByFullName_Succes()
     {
         //Arrange 
-        SimpelIngredientRepository repo = new SimpelIngredientRepository();
+        SimpleIngredientRepository repo = new SimpleIngredientRepository();
 
         //Act
-        SimpelIngredient ingrediens = repo.GetItemByName("Ris");
+        SimpleIngredient ingrediens = repo.GetItemByName("Ris");
 
         //Assert
         Assert.Equal("Ris",ingrediens.Navn);
@@ -25,11 +25,11 @@ public class SimpleRepository_Test
     public void GetAllFoodItems_Succes()
     {
         //Arrange 
-        SimpelIngredientRepository repo = new SimpelIngredientRepository();
+        SimpleIngredientRepository repo = new SimpleIngredientRepository();
 
 
         //Act
-        IEnumerable<SimpelIngredient> ingrediens = repo.GetAll();
+        IEnumerable<SimpleIngredient> ingrediens = repo.GetAll();
 
         //Assert
         Assert.NotEmpty(ingrediens);

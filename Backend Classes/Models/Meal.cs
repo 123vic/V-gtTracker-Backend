@@ -5,11 +5,9 @@ using System.Text;
 
 namespace Backend_Classes.Models;
 
-public class DagligOversigt : IHarId
+public class Meal : IHasId
 {
     public int Id { get; set; }
-
-    public DateTime Dato { get; set; }
-
-   List<Måltid> Måltider { get; set; }
+    public string Måltidstype { get; set; }
+    public List<Ingrediens> Ingredienser { get; set; }
 }

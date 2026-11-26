@@ -26,7 +26,7 @@ builder.Services.AddCors(options =>
 });
 
 
-builder.Services.AddSingleton<ISimpelIngredientRepository, SimpelIngredientRepository>();
+builder.Services.AddSingleton<ISimpleIngredientRepository, SimpleIngredientRepository>();
 
 var app = builder.Build();
 app.UseSwagger();

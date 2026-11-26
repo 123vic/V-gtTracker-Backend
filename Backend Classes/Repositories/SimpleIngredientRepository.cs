@@ -6,20 +6,20 @@ using System.Text;
 
 namespace Backend_Classes.Repositories;
 
-public class SimpelIngredientRepository : RepositoryBase<SimpelIngredient>, ISimpelIngredientRepository
+public class SimpleIngredientRepository : RepositoryBase<SimpleIngredient>, ISimpleIngredientRepository
 {
-    public SimpelIngredientRepository()
+    public SimpleIngredientRepository()
     {
-        Create(new SimpelIngredient("Ris", 1000));
+        Create(new SimpleIngredient("Ris", 1000));
     }
 
-    public SimpelIngredient? GetItemByName(string name)
+    public SimpleIngredient? GetItemByName(string name)
     {
         return Data.Select(x => x.Value).Where(x => x.Navn == name).FirstOrDefault();
     }
 
 
-    public IEnumerable<SimpelIngredient> GetAll()
+    public IEnumerable<SimpleIngredient> GetAll()
     {
         return Data.Select(x => x.Value);   
     }

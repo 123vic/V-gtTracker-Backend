@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Backend_Classes.Models;
 
-public class Bruger : IHarId
+public class User : IHasId
 {
     public int Id { get; set; }
 

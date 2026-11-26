@@ -11,9 +11,9 @@ namespace Backend_Test
         [Fact]
         public void API_GET_Succes()
         {
-            var controller = new SimpleIngredientController(new SimpelIngredientRepository());
+            var controller = new SimpleIngredientController(new SimpleIngredientRepository());
 
-            ActionResult<IEnumerable<SimpelIngredient>> simpelIngredients = controller.Get();
+            ActionResult<IEnumerable<SimpleIngredient>> simpelIngredients = controller.Get();
 
             Assert.NotEmpty(simpelIngredients.Value);
         }
