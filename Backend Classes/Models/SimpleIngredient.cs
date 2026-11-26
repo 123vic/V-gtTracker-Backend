@@ -9,10 +9,10 @@ public class SimpleIngredient : IHasId
 {
     public int Id { get; set; }
     public string Navn { get; set; }
-    public int BarcodeId { get; set; }
+    public string BarcodeId { get; set; }
 
 
-    public SimpleIngredient(string navn, int barcodeId) {
+    public SimpleIngredient(string navn, string barcodeId) {
         Navn = navn;
         BarcodeId = barcodeId;
     }

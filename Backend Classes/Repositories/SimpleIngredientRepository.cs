@@ -10,7 +10,7 @@ public class SimpleIngredientRepository : RepositoryBase<SimpleIngredient>, ISim
 {
     public SimpleIngredientRepository()
     {
-        Create(new SimpleIngredient("Ris", 1000));
+        Create(new SimpleIngredient("Ris", "5760466968133"));
     }
 
     public SimpleIngredient? GetItemByName(string name)
