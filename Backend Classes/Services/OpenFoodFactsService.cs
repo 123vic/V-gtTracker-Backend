@@ -1,8 +1,9 @@
-﻿using System.Net.Http.Json;
-using System.Text.Json.Serialization;
-using Backend_Classes.Interfaces;
+﻿using Backend_Classes.Interfaces;
 using Backend_Classes.Models;
 using System;
+using System.Net.Http.Json;
+using System.Text.Json.Serialization;
+using static System.Net.WebRequestMethods;
 
 
 namespace Backend_Classes.Services;
@@ -15,14 +16,22 @@ public class OpenFoodFactsService : IOpenFoodFactsService
     {
         _http = http;
     }
-
     public async Task<Ingrediens?> GetByBarcodeAsync(string barcode)
     {
-        var response = await _http.GetAsync($"api/v2/product/{barcode}.json");
+        var url = $"api/v2/product/{barcode}.json";
+        var response = await _http.GetAsync(url);
+        var json = await response.Content.ReadAsStringAsync();
+
+        Console.WriteLine($"URL: {_http.BaseAddress}{url}");
+        Console.WriteLine($"HTTP status: {(int)response.StatusCode}");
+        Console.WriteLine($"Svar: {json[..Math.Min(500, json.Length)]}");
+
         if (!response.IsSuccessStatusCode)
             return null;
 
-        var result = await response.Content.ReadFromJsonAsync<OffResponse>();
+        var result = System.Text.Json.JsonSerializer.Deserialize<OffResponse>(json);
+        Console.WriteLine($"Status={result?.Status}, Product null? {result?.Product is null}");
+
         if (result is null || result.Status != 1 || result.Product is null)
             return null;
 

@@ -1,30 +1,30 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Backend_Classes.Interfaces;
 using Backend_Classes.Models;
-using Backend_Classes.Repositories;
 using Microsoft.AspNetCore.Cors;
 
 namespace VaegtTracker_Backend.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
-[EnableCors("AllowAll")]
-public class IngrediensController : Controller
+public class IngrediensController : ControllerBase
 {
-    private readonly IngrediensRepository _repo;
+    private readonly IOpenFoodFactsService _openFoodFacts;
 
-    public IngrediensController(IngrediensRepository repo)
+    public IngrediensController(IOpenFoodFactsService openFoodFacts)
     {
-        _repo = repo;
+        _openFoodFacts = openFoodFacts;
     }
+
     [HttpGet("barcode/{barcodeId}")]
-    public ActionResult<Ingrediens> GetByBarcode(string barcodeId)
+    public async Task<ActionResult<Ingrediens>> GetByBarcode(string barcodeId)
     {
-        var ingrediens = _repo.GetByBarcode(barcodeId);
+        Console.WriteLine($"Controller ramt: {barcodeId}");
+
+        var ingrediens = await _openFoodFacts.GetByBarcodeAsync(barcodeId);
         if (ingrediens is null)
             return NotFound();
 
         return Ok(ingrediens);
     }
 }
-
