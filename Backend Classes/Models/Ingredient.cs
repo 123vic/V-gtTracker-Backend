@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Backend_Classes.Models;
 
-public class Ingrediens : IHasId
+public class Ingredient : IHasId
 {
     public int Id { get; set; }
 
@@ -19,4 +19,6 @@ public class Ingrediens : IHasId
     public double? ProteinPer100g { get; set; }
     public double? KulhydratPer100g { get; set; }
     public double? FedtPer100g { get; set; }
+
+
 }

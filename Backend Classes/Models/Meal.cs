@@ -9,5 +9,5 @@ public class Meal : IHasId
 {
     public int Id { get; set; }
     public string Måltidstype { get; set; }
-    public List<Ingrediens> Ingredienser { get; set; }
+    public List<Ingredient> Ingredienser { get; set; }
 }

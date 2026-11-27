@@ -7,5 +7,5 @@ namespace Backend_Classes.Interfaces;
 
 public interface IOpenFoodFactsService
 {
-    Task<Ingrediens?> GetByBarcodeAsync(string barcode);
+    Task<Ingredient?> GetByBarcodeAsync(string barcode);
 }
