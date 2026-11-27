@@ -10,7 +10,14 @@ public class SimpleIngredientRepository : RepositoryBase<SimpleIngredient>, ISim
 {
     public SimpleIngredientRepository()
     {
-        Create(new SimpleIngredient("Ris", "5760466968133"));
+        Create(new SimpleIngredient("Jasminris", "7340011352198"));
+        Create(new SimpleIngredient("Hakket oksekød", "4704310825600"));
+        Create(new SimpleIngredient("Hakket Tomat", "5700002404053"));
+        Create(new SimpleIngredient("Mezze penne rigate", "8001120721310("));
+        Create(new SimpleIngredient("Brown onions", "20175863"));
+        Create(new SimpleIngredient("Økologiske Hvidløg", "3000007029575"));
+
+
     }
 
     public SimpleIngredient? GetItemByName(string name)
