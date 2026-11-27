@@ -18,7 +18,7 @@ namespace VægtTracker___Backend.Controllers
         [HttpGet]
         public IActionResult GetWeight()
         {
-            return Ok(_repo.GetAll());
+            return Ok(_repo.Latest);
         }
 
         // Pi'en sender hertil: husk kun tallet

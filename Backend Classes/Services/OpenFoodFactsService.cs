@@ -37,7 +37,7 @@ public class OpenFoodFactsService : IOpenFoodFactsService
             BarcodeId = barcode,
             Name = result.Product.ProductName ?? "Ukendt produkt",
             Brand = result.Product.Brands ?? "",
-            Calories = (int)Math.Round(n?.KcalPer100g ?? 0),
+            CaloriesPer100g = (int)Math.Round(n?.KcalPer100g ?? 0),
             ProteinPer100g = n?.ProteinPer100g,
             KulhydratPer100g = n?.KulhydratPer100g,
             FedtPer100g = n?.FedtPer100g

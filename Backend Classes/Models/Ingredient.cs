@@ -13,7 +13,7 @@ public class Ingredient : IHasId
 
     public string Brand { get; set; }
 
-    public int Calories { get; set; }
+    public int CaloriesPer100g { get; set; }
 
     public string BarcodeId { get; set; }
     public double? ProteinPer100g { get; set; }
