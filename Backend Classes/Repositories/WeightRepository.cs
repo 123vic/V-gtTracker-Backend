@@ -4,6 +4,8 @@ public class WeightRepository
 {
     private readonly List<Weight> _data = new();
 
+    public double Latest { get; set; }   // ny: vægten lige nu
+
     public List<Weight> GetAll()
     {
         return _data;

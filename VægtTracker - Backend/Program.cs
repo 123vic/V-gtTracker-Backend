@@ -25,7 +25,7 @@ builder.Services.AddCors(options =>
                               });
 });
 
-
+builder.Services.AddSingleton<VaegtApi.WeightRepository>();
 builder.Services.AddSingleton<ISimpleIngredientRepository, SimpleIngredientRepository>();
 
 builder.Services.AddHttpClient<IOpenFoodFactsService, OpenFoodFactsService>(c =>
