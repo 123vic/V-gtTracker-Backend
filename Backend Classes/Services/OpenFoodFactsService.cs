@@ -22,15 +22,10 @@ public class OpenFoodFactsService : IOpenFoodFactsService
         var response = await _http.GetAsync(url);
         var json = await response.Content.ReadAsStringAsync();
 
-        Console.WriteLine($"URL: {_http.BaseAddress}{url}");
-        Console.WriteLine($"HTTP status: {(int)response.StatusCode}");
-        Console.WriteLine($"Svar: {json[..Math.Min(500, json.Length)]}");
-
         if (!response.IsSuccessStatusCode)
             return null;
 
         var result = System.Text.Json.JsonSerializer.Deserialize<OffResponse>(json);
-        Console.WriteLine($"Status={result?.Status}, Product null? {result?.Product is null}");
 
         if (result is null || result.Status != 1 || result.Product is null)
             return null;
