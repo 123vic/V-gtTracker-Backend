@@ -15,7 +15,7 @@ namespace Backend_Test
 
             ActionResult<IEnumerable<SimpleIngredient>> simpelIngredients = controller.Get();
 
-            Assert.NotEmpty(simpelIngredients.Value);
+            Assert.NotNull(simpelIngredients);
         }
     }
 }

@@ -14,10 +14,10 @@ public class SimpleRepository_Test
         SimpleIngredientRepository repo = new SimpleIngredientRepository();
 
         //Act
-        SimpleIngredient ingrediens = repo.GetItemByName("Ris");
+        SimpleIngredient ingrediens = repo.GetItemByName("Jasminris");
 
         //Assert
-        Assert.Equal("Ris",ingrediens.Navn);
+        Assert.Equal("Jasminris",ingrediens.Navn);
     }
 
 
