@@ -24,7 +24,7 @@ builder.Services.AddCors(options =>
                               });
 });
 
-
+builder.Services.AddSingleton<VaegtApi.WeightRepository>();
 builder.Services.AddSingleton<ISimpleIngredientRepository, SimpleIngredientRepository>();
 
 var app = builder.Build();

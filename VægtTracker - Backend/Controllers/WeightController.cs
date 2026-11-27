@@ -1,5 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
+using VaegtApi;
 
 namespace VægtTracker___Backend.Controllers
 {
@@ -7,18 +7,33 @@ namespace VægtTracker___Backend.Controllers
     [ApiController]
     public class WeightController : ControllerBase
     {
-        private static double _weightGrams = 0;
+        private readonly WeightRepository _repo;
+
+        public WeightController(WeightRepository repo)
+        {
+            _repo = repo;
+        }
+
+        // Henter alle gemte vægte
         [HttpGet]
         public IActionResult GetWeight()
         {
-            return Ok(_weightGrams);
+            return Ok(_repo.GetAll());
         }
 
+        // Pi'en sender hertil: husk kun tallet
         [HttpPost]
         public IActionResult AddWeight([FromBody] double weight)
         {
-            _weightGrams = weight;
-            return Ok(_weightGrams);
+            _repo.Latest = weight;
+            return Ok(weight);
+        }
+
+        // Knappen kalder denne: gem vægten
+        [HttpPost("save")]
+        public IActionResult SaveWeight()
+        {
+            return Ok(_repo.Add(new Weight { Gram = _repo.Latest }));
         }
     }
 }
