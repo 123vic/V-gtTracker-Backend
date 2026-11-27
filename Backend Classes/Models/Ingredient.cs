@@ -19,4 +19,6 @@ public class Ingredient : IHasId
     public double? ProteinPer100g { get; set; }
     public double? KulhydratPer100g { get; set; }
     public double? FedtPer100g { get; set; }
+
+
 }

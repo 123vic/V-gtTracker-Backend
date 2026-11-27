@@ -16,11 +16,11 @@ public class IngrediensController : ControllerBase
         _openFoodFacts = openFoodFacts;
     }
 
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status404NotFound)]
     [HttpGet("barcode/{barcodeId}")]
     public async Task<ActionResult<Ingredient>> GetByBarcode(string barcodeId)
-    {
-        Console.WriteLine($"Controller ramt: {barcodeId}");
-
+    { 
         var ingrediens = await _openFoodFacts.GetByBarcodeAsync(barcodeId);
         if (ingrediens is null)
             return NotFound();
