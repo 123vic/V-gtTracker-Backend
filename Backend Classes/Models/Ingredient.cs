@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Backend_Classes.Models;
 
-public class Ingrediens : IHasId
+public class Ingredient : IHasId
 {
     public int Id { get; set; }
 

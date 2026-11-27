@@ -17,7 +17,7 @@ public class IngrediensController : ControllerBase
     }
 
     [HttpGet("barcode/{barcodeId}")]
-    public async Task<ActionResult<Ingrediens>> GetByBarcode(string barcodeId)
+    public async Task<ActionResult<Ingredient>> GetByBarcode(string barcodeId)
     {
         Console.WriteLine($"Controller ramt: {barcodeId}");
 

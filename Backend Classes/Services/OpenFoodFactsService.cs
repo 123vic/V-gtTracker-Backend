@@ -16,7 +16,7 @@ public class OpenFoodFactsService : IOpenFoodFactsService
     {
         _http = http;
     }
-    public async Task<Ingrediens?> GetByBarcodeAsync(string barcode)
+    public async Task<Ingredient?> GetByBarcodeAsync(string barcode)
     {
         var url = $"api/v2/product/{barcode}.json";
         var response = await _http.GetAsync(url);
@@ -37,7 +37,7 @@ public class OpenFoodFactsService : IOpenFoodFactsService
 
         var n = result.Product.Nutriments;
 
-        return new Ingrediens
+        return new Ingredient
         {
             BarcodeId = barcode,
             Name = result.Product.ProductName ?? "Ukendt produkt",
